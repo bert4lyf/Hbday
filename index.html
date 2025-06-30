@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Esther Berth</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .card {
+            width: 600px;
+            height: 400px;
+            position: relative;
+            background: linear-gradient(145deg, #ffffff, #f8f9ff);
+            border-radius: 25px;
+            box-shadow: 
+                0 25px 50px rgba(102, 126, 234, 0.3),
+                0 15px 35px rgba(118, 75, 162, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            overflow: hidden;
+            transform-style: preserve-3d;
+            animation: cardFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0px) rotateY(0deg); }
+            50% { transform: translateY(-10px) rotateY(2deg); }
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(221, 160, 221, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(173, 216, 230, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 30px 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .crown {
+            display: inline-block;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: crownPulse 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(255, 215, 0, 0.4));
+        }
+        
+        @keyframes crownPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .birthday-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            margin-bottom: 10px;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(45, 55, 72, 0.1);
+            position: relative;
+        }
+        
+        .name::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .decorative-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            color: #ff6b9d;
+            animation: heartFloat 4s ease-in-out infinite;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+        
+        .heart:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .heart:nth-child(2) {
+            top: 25%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+        
+        .heart:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+        
+        .heart:nth-child(4) {
+            bottom: 30%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+        
+        @keyframes heartFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-15px) scale(1.1); }
+        }
+        
+        .star {
+            position: absolute;
+            color: #ffd700;
+            animation: starTwinkle 3s ease-in-out infinite;
+            font-size: 1.2rem;
+        }
+        
+        .star:nth-child(5) {
+            top: 10%;
+            left: 50%;
+            animation-delay: 0.5s;
+        }
+        
+        .star:nth-child(6) {
+            top: 70%;
+            left: 70%;
+            animation-delay: 1.5s;
+        }
+        
+        .star:nth-child(7) {
+            top: 80%;
+            left: 15%;
+            animation-delay: 2.5s;
+        }
+        
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+        }
+        
+        .message {
+            text-align: center;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .message-text {
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        .highlight {
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .wish-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .sparkle {
+            color: #f093fb;
+            font-size: 1.3rem;
+            animation: sparkleRotate 2s linear infinite;
+        }
+        
+        @keyframes sparkleRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .wish-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #2d3748;
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        .glow-effect {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: glowMove 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes glowMove {
+            0%, 100% { transform: translate(-30%, -30%); }
+            25% { transform: translate(-70%, -30%); }
+            50% { transform: translate(-70%, -70%); }
+            75% { transform: translate(-30%, -70%); }
+        }
+        
+        .card:hover {
+            transform: scale(1.02) rotateY(5deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover .crown {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="glow-effect"></div>
+        
+        <div class="decorative-elements">
+            <div class="heart">💖</div>
+            <div class="heart">💝</div>
+            <div class="heart">💕</div>
+            <div class="heart">💗</div>
+            <div class="star">✨</div>
+            <div class="star">⭐</div>
+            <div class="star">✨</div>
+        </div>
+        
+        <div class="header">
+            <div class="crown">👑</div>
+            <div class="birthday-text">Happy Birthday</div>
+            <div class="name">Esther Beth</div>
+        </div>
+        
+        <div class="message">
+            <div class="message-text">
+                May your special day be filled with <span class="highlight">endless joy</span>, 
+                <span class="highlight">boundless love</span>, and all the <span class="highlight">greatness</span> 
+                you bring to everyone around you.
+            </div>
+            
+            <div class="wish-container">
+                <div class="sparkle">✨</div>
+                <div class="wish-text">Shine bright, beautiful soul!</div>
+                <div class="sparkle">✨</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
